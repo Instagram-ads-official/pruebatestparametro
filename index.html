@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conectando con WhatsApp...</title>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=n=n.callMethod?
+    fbq.callMethod.apply(fbq,arguments):fbq.queue.push(arguments);
+    if(!f._fbq)f._fbq=fbq;fbq.push=fbq;fbq.loaded=!0;fbq.version='2.0';
+    fbq.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '9473507609359104');
+    fbq('track', 'ViewContent');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=9473507609359104&ev=ViewContent&noscript=1"/>
+  </noscript>
+</head>
+<body>
+  <p>Conectando con WhatsApp, por favor espera...</p>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Leer fbclid de cookie (establecido por el middleware en el edge)
+      const match = document.cookie.match(/(?:^|;\s*)fbclid=([^;]+)/);
+      const fbclid = match ? match[1] : null;
+
+      // Construir mensaje
+      const whatsappNumber = "5491178447281";
+      let message = "Hola, vengo por el bono de bienvenida del 𝟐𝟎𝟎%, ¿me creas un usuario?\nMi Código Promocional es: ";
+      message += fbclid || "No disponible";
+
+      // Redirigir a WhatsApp
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.location.href = whatsappURL;
+    });
+  </script>
+</body>
+</html>
